@@ -8,12 +8,14 @@
     $banner_tile  = $recentNews->title;
     $banner_description = $recentNews->excerpt;
     $banner_link = $this->Url->build('/news/' . $recentNews->id . '/' . $news_slug);
+    $button_title = 'READ MORE';
   }elseif( $page_banner_name == 'products' ){    
     $container_width = 'col-md-6';
     $banner_image = $this->Url->build("/webroot/images/product-page/product-banner.jpg");        
     $banner_tile  = '<span style="color: #fe0002;letter-spacing: -7px;font-weight: bolder;">3M</span><span style="color:#8e8e8e;"> Building & Commercial Services</span>';
     $banner_description = "The 3M™ Building and Commercial Services Division (BCSD) provides innovative, sustainable solutions to people around the world who construct, maintain and operate facilities, to protect their buildings and enhance the performance and productivity of their employees";
-    $banner_link = '';
+    $banner_link  = '';     
+    $button_title = 'SEE ALL PRODUCTS';
   }elseif( $page_banner_name == 'inner_pages' ){
     $container_width = 'col-md-12';
     $banner_image = $this->Url->build("/webroot/images/carousel/banner-1.jpg");        
@@ -33,7 +35,7 @@
     <div class="<?= $container_width ?> left pr-banner">
       <img class="default" src="<?= $banner_image ?>">
     </div>
-    <?php if( $page_banner_name == 'products' ){ ?>
+    <?php if( $page_banner_name == 'products' || $page_banner_name == 'news' ){ ?>
     <div class="col-md-6 left pr-banner">
       <div class="pr-description">
         <h2 class="aleternate-font pr-title"><?= $banner_tile ?></h2>
@@ -43,8 +45,8 @@
         <br/>
         <p class="ptsans-font center" style="color:#909090;"><?= $banner_description ?></p>
         <?php if($banner_link != ''){ ?>
-        <div class="center product-btn-container">
-          <a class="product-btn" href="<?= $banner_link ?>">SEE ALL PRODUCTS</a>
+        <div class="center product-btn-container">          
+          <a class="product-btn" href="<?= $banner_link ?>"><?= $button_title ?></a>
         </div>
         <?php } ?>
       </div>

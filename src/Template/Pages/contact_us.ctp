@@ -1,34 +1,41 @@
-<section class="content container">
+<style>
+#form-contact-us .form-control{
+  margin-bottom: 4px;
+}
+</style>
+<br/>
+<div class="content container">
+<br class="clear"/>
+<br />
 <div class="row">
-  <div class="col-md-8">
+  <div class="col-md-8 left">
   <div class="spacer content" id="contact-us">
   <!--Contact Starts-->
   <div class="contactform">
   <div class="contact-form-container">
-    <p class="wowload fadeInUp" style="margin-left:13px;">Fill out the below form. We will contact you in no time.</p>
-      <div class="row wowload fadeInLeftBig">   
-        <form id="form-contact-us" method="POST">   
+    <p class="wowload fadeInUp" style="margin-left:31px;">Fill out the below form. We will contact you in no time.</p>
+       
+        <form id="form-contact-us" method="POST" class="form-horizontal">   
           <div class="col-sm-12">      
             <div class="err-container"></div>
-            <div class="col-sm-6 col-xs-12"><input type="text" name="name" id="name" required="" placeholder="Name"></div>
-            <div class="col-sm-6 col-xs-12"><input type="text" name="company" id="company" required="" placeholder="Company"></div>
-            <div class="col-sm-6 col-xs-12"><input type="email" name="email" id="email" required="" placeholder="Email"></div>
-            <div class="col-sm-6 col-xs-12"><input type="text" name="position" id="position" required="" placeholder="Position"></div>
-            <div class="col-sm-6 col-xs-12"><input type="text" name="phone_number" id="phone_number" required="" placeholder="Phone Number"></div>
-            <div class="col-sm-6 col-xs-12"><input type="text" name="fax" id="fax" placeholder="Fax"></div>
-            <div class="col-sm-12 col-xs-12"><textarea rows="5" name="message" id="message" required="" placeholder="Message"></textarea></div>          
+            <div class="col-sm-10 col-xs-12"><input type="text" name="name" id="name" required="" placeholder="Name" class="form-control"></div>
+            <div class="col-sm-10 col-xs-12"><input type="text" name="company" id="company" required="" placeholder="Company" class="form-control"></div>
+            <div class="col-sm-10 col-xs-12"><input type="email" name="email" id="email" required="" placeholder="Email" class="form-control"></div>
+            <div class="col-sm-10 col-xs-12"><input type="text" name="position" id="position" required="" placeholder="Position" class="form-control"></div>
+            <div class="col-sm-10 col-xs-12"><input type="text" name="phone_number" id="phone_number" required="" placeholder="Phone Number" class="form-control"></div>
+            <div class="col-sm-10 col-xs-12"><input type="text" name="fax" id="fax" placeholder="Fax" class="form-control"></div>
+            <div class="col-sm-12 col-xs-12"><textarea rows="5" name="message" id="message" required="" placeholder="Message" class="form-control"></textarea></div>
           </div>
           <div class="col-sm-12"> 
             <div class="col-sm-3 col-xs-12"><button type="submit" class="btn btn-primary btn-send-inquiry"><i class="fa fa-paper-plane"></i> Send</button></div>
           </div>
-        </form>
-      </div>
+        </form>      
   </div>
   </div>
   </div>
   </div>
 
-  <div class="col-md-4">
+  <div class="col-md-4 left">
   
     <div class="box box-primary box-solid">                  
         <div class="box-header with-border"><i class="fa fa-envelope margin-r-5"></i> <?= __('Email Us') ?> : <?php echo $companyDetails->email; ?></div>   
@@ -77,5 +84,6 @@
     </div>  
   </div>
 </div>
-</section>
+</div>
+<br/><br/>
 <!--Contact Ends-->

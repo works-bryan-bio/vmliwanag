@@ -218,10 +218,11 @@ class PagesController extends AppController
         $this->viewBuilder()->layout('pages');                
         $this->set([            
             'page_title' => "Contact Us",
+            'page_banner_name' => 'inner_pages',
             'companyDetails' => $companyDetails,
-            'mt_for_layout' => "AIMALUBE Contact Us",
-            'mk_for_layout' => "AIMALUBE Contact Us",
-            'md_for_layout' => "AIMALUBE Contact Us",
+            'mt_for_layout' =>  COMPANY_NAME . " Contact Us",
+            'mk_for_layout' => COMPANY_NAME . " Contact Us",
+            'md_for_layout' => COMPANY_NAME . " Contact Us",
             'front_nav_selected' => 'contact-us'
         ]);   
     }

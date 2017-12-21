@@ -195,6 +195,11 @@ class NewsController extends AppController
             'contain' => []
         ]);    
 
+        $recentNews = $this->News->find()            
+            ->order(['News.id' => 'DESC'])
+            ->first()
+        ;
+
         $bread[] = ['url' => Router::url(['controller' => 'News', 'action' => 'listing']), 'title' => 'News'];        
         $bread[] = ['url' => '', 'title' => $news->title];
 
@@ -202,7 +207,9 @@ class NewsController extends AppController
         $this->set([
             'news' => $news,
             'bread' => $bread,
+            'recentNews' => $recentNews,
             'page_title' => 'News',
+            'page_banner_name' => 'news',
             'mt_for_layout' => $news->meta_title,
             'mk_for_layout' => $news->meta_keyword,
             'md_for_layout' => $news->meta_description,
@@ -221,15 +228,16 @@ class NewsController extends AppController
             ->order(['News.sorting' => 'DESC'])
         ;
 
-        $recentNews = $this->find()
-            ->first()
+        $recentNews = $this->News->find()            
             ->order(['News.id' => 'DESC'])
+            ->first()
         ;
         
         $bread[] = ['url' => '', 'title' => 'News'];
 
         $this->viewBuilder()->layout('news');    
         $this->set('bread', $bread);
+        $this->set('page_banner_name', 'news');
         $this->set('recentNews', $recentNews);
         $this->set('page_title', 'News');
         $this->set('front_nav_selected','news');
